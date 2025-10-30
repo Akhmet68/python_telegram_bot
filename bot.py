@@ -2,7 +2,7 @@ import asyncio
 from aiogram import Bot, Dispatcher
 from config import API_TOKEN
 from database import init_db
-from handlers import start, language, level, lessons, register
+from handlers import start, language, level, lessons, register, topics
 
 async def main():
     await init_db()
@@ -14,6 +14,7 @@ async def main():
     dp.include_router(language.router)
     dp.include_router(level.router)
     dp.include_router(lessons.router)
+    dp.include_router(topics.router)
 
     print("Бот запущен и готов к работе")
     await bot.delete_webhook(drop_pending_updates=True)
