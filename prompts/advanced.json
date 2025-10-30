@@ -83,7 +83,7 @@
       {"number": 17, "question": "Does Python support multiple inheritance?", "options": {"A": "Yes", "B": "No"}, "answer": "A"},
       {"number": 18, "question": "What is super() used for?", "options": {"A": "Call parent method", "B": "Create variable", "C": "Delete class", "D": "Write file"}, "answer": "A"},
       {"number": 19, "question": "Event-driven programming is used for what?", "options": {"A": "UI and bots", "B": "File handling", "C": "Loops", "D": "Error logging"}, "answer": "A"},
-      {"number": 20, "question": "Which paradigm do classes belong to?", "options": {"A": "Procedural", "B": "Object-Oriented", "C": "Functional", "D": "Declarative"}, "answer": "B"}
+      {"number": 20, "question": "Which paradigm do classes belong to?", "options": {"A": "Procedural", "B": "Object-Oriented", "C": "Functional", "D": "Declarative"}, "answer": "B"},
       {"number": 12, "question": "What does 'with open()' do?", "options": {"A": "Automatically closes file", "B": "Deletes file", "C": "Copies file", "D": "Only opens file"}, "answer": "A"},
       {"number": 13, "question": "What is a generator?", "options": {"A": "Function using yield instead of return", "B": "Loop", "C": "Class", "D": "Module"}, "answer": "A"},
       {"number": 14, "question": "What is a set used for?", "options": {"A": "Store unique values", "B": "Work with strings", "C": "Write files", "D": "Format output"}, "answer": "A"},
