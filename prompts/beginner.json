@@ -1,244 +1,95 @@
 {
-  "questions": [
-    {
-      "number": 1,
-      "question": "Python тілінде файл ашу үшін қандай функция қолданылады?",
-      "options": {
-        "A": "open()",
-        "B": "file()",
-        "C": "fopen()",
-        "D": "read()"
-      },
-      "answer": "A",
-      "answer_text": "open()"
-    },
-    {
-      "number": 2,
-      "question": "Файлды оқу режимінде ашу үшін қандай параметр қолданылады?",
-      "options": {
-        "A": "w",
-        "B": "r",
-        "C": "a",
-        "D": "x"
-      },
-      "answer": "B",
-      "answer_text": "r"
-    },
-    {
-      "number": 3,
-      "question": "Файлға жазу режимі қалай белгіленеді?",
-      "options": {
-        "A": "r",
-        "B": "a",
-        "C": "w",
-        "D": "rw"
-      },
-      "answer": "C",
-      "answer_text": "w"
-    },
-    {
-      "number": 4,
-      "question": "Файлға қосымша (append) түрде жазу үшін қандай режим керек?",
-      "options": {
-        "A": "w",
-        "B": "r+",
-        "C": "a",
-        "D": "rw"
-      },
-      "answer": "C",
-      "answer_text": "a"
-    },
-    {
-      "number": 5,
-      "question": "Файлдан барлық мәтінді оқу үшін қандай әдіс қолданылады?",
-      "options": {
-        "A": "readline()",
-        "B": "readlines()",
-        "C": "read()",
-        "D": "write()"
-      },
-      "answer": "C",
-      "answer_text": "read()"
-    },
-    {
-      "number": 6,
-      "question": "Файлды жол-жолымен оқу үшін қай әдіс қолданылады?",
-      "options": {
-        "A": "read()",
-        "B": "readall()",
-        "C": "readline()",
-        "D": "input()"
-      },
-      "answer": "C",
-      "answer_text": "readline()"
-    },
-    {
-      "number": 7,
-      "question": "readlines() әдісі не қайтарады?",
-      "options": {
-        "A": "Бір жол",
-        "B": "Файл атауын",
-        "C": "Жолдар тізімін",
-        "D": "Барлық мәтінді бір жолмен"
-      },
-      "answer": "C",
-      "answer_text": "Жолдар тізімін"
-    },
-    {
-      "number": 8,
-      "question": "Файлға мәтін жазу үшін қай әдіс қолданылады?",
-      "options": {
-        "A": "print()",
-        "B": "write()",
-        "C": "input()",
-        "D": "add()"
-      },
-      "answer": "B",
-      "answer_text": "write()"
-    },
-    {
-      "number": 9,
-      "question": "Файлмен жұмысты аяқтау үшін не жасау керек?",
-      "options": {
-        "A": "delete() қолдану",
-        "B": "stop()",
-        "C": "close() әдісін шақыру",
-        "D": "exit()"
-      },
-      "answer": "C",
-      "answer_text": "close() әдісін шақыру"
-    },
-    {
-      "number": 10,
-      "question": "Төмендегі кодтың нәтижесі қандай?\nf = open('data.txt', 'w')\nf.write('Hello')\nf.close()",
-      "options": {
-        "A": "\"Hello\" басып шығарады",
-        "B": "\"data.txt\" файлына \"Hello\" жазады",
-        "C": "Файлды өшіреді",
-        "D": "Ештеңе істемейді"
-      },
-      "answer": "B",
-      "answer_text": "\"data.txt\" файлына \"Hello\" жазады"
-    },
-    {
-      "number": 11,
-      "question": "Егер файл жоқ болса және \"w\" режимімен ашылса не болады?",
-      "options": {
-        "A": "Файл автоматты түрде жасалады",
-        "B": "Қате пайда болады",
-        "C": "Бағдарлама тоқтайды",
-        "D": "Файл оқылады"
-      },
-      "answer": "A",
-      "answer_text": "Файл автоматты түрде жасалады"
-    },
-    {
-      "number": 12,
-      "question": "Егер файл жоқ болса және \"r\" режимімен ашылса не болады?",
-      "options": {
-        "A": "Қате шығады",
-        "B": "Файл автоматты түрде жасалады",
-        "C": "Файл бос күйінде ашылады",
-        "D": "Ештеңе болмайды"
-      },
-      "answer": "A",
-      "answer_text": "Қате шығады"
-    },
-    {
-      "number": 13,
-      "question": "with open('file.txt', 'r') as f: жазбасының артықшылығы неде?",
-      "options": {
-        "A": "Файл автоматты түрде жабылады",
-        "B": "Код қысқарады",
-        "C": "Файлды екі рет ашады",
-        "D": "Мәтін форматталады"
-      },
-      "answer": "A",
-      "answer_text": "Файл автоматты түрде жабылады"
-    },
-    {
-      "number": 14,
-      "question": "\"a\" режимінде ашылған файлға жазғанда не болады?",
-      "options": {
-        "A": "Мәтін соңына қосылады",
-        "B": "Мәтін басынан жазылады",
-        "C": "Файл өшіріледі",
-        "D": "Ештеңе жазылмайды"
-      },
-      "answer": "A",
-      "answer_text": "Мәтін соңына қосылады"
-    },
-    {
-      "number": 15,
-      "question": "Файлдың бар-жоғын тексеру үшін қандай модуль қолданылады?",
-      "options": {
-        "A": "random",
-        "B": "math",
-        "C": "os",
-        "D": "sys"
-      },
-      "answer": "C",
-      "answer_text": "os"
-    },
-    {
-      "number": 16,
-      "question": "Файлдағы барлық жолдарды санау үшін не жасауға болады?",
-      "options": {
-        "A": "len(f.read())",
-        "B": "len(f.readlines())",
-        "C": "f.count()",
-        "D": "f.total()"
-      },
-      "answer": "B",
-      "answer_text": "len(f.readlines())"
-    },
-    {
-      "number": 17,
-      "question": "Файлды екі режимде (оқу және жазу) ашу үшін қай режим қолданылады?",
-      "options": {
-        "A": "rw",
-        "B": "r+",
-        "C": "w+",
-        "D": "a+"
-      },
-      "answer": "B",
-      "answer_text": "r+"
-    },
-    {
-      "number": 18,
-      "question": "Мына кодтың нәтижесі қандай?\nf = open('test.txt', 'r')\nprint(f.readline())\nf.close()",
-      "options": {
-        "A": "Файлдан бір жол оқиды",
-        "B": "Файлды өшіреді",
-        "C": "Файлды жазады",
-        "D": "Қате шығарады"
-      },
-      "answer": "A",
-      "answer_text": "Файлдан бір жол оқиды"
-    },
-    {
-      "number": 19,
-      "question": "Файлды бірден ашып, автоматты түрде жабу тәсілі:",
-      "options": {
-        "A": "with open() as",
-        "B": "open() + close()",
-        "C": "try-except",
-        "D": "import file"
-      },
-      "answer": "A",
-      "answer_text": "with open() as"
-    },
-    {
-      "number": 20,
-      "question": "Файлға жаңа деректерді қосу үшін қай режим қолайлы?",
-      "options": {
-        "A": "w",
-        "B": "r",
-        "C": "a",
-        "D": "r+"
-      },
-      "answer": "C",
-      "answer_text": "a"
-    }
-  ]
+  "kz": {
+    "level": "Beginner",
+    "questions": [
+      {"number": 1, "question": "Python тілінде файл ашу үшін қандай функция қолданылады?", "options": {"A": "open()", "B": "file()", "C": "fopen()", "D": "read()"}, "answer": "A"},
+      {"number": 2, "question": "Файлды оқу режимінде ашу үшін қандай параметр қолданылады?", "options": {"A": "\"w\"", "B": "\"r\"", "C": "\"a\"", "D": "\"x\""}, "answer": "B"},
+      {"number": 3, "question": "Файлға жазу режимі қалай белгіленеді?", "options": {"A": "\"r\"", "B": "\"a\"", "C": "\"w\"", "D": "\"rw\""}, "answer": "C"},
+      {"number": 4, "question": "Файлға қосымша түрде жазу үшін қандай режим керек?", "options": {"A": "\"w\"", "B": "\"r+\"", "C": "\"a\"", "D": "\"rw\""}, "answer": "C"},
+      {"number": 5, "question": "Файлдан барлық мәтінді оқу үшін қандай әдіс қолданылады?", "options": {"A": "readline()", "B": "readlines()", "C": "read()", "D": "write()"}, "answer": "C"},
+      {"number": 6, "question": "Файлды жол-жолымен оқу үшін қай әдіс қолданылады?", "options": {"A": "read()", "B": "readall()", "C": "readline()", "D": "input()"}, "answer": "C"},
+      {"number": 7, "question": "readlines() әдісі не қайтарады?", "options": {"A": "Бір жол", "B": "Файл атауын", "C": "Жолдар тізімін", "D": "Барлық мәтінді бір жолмен"}, "answer": "C"},
+      {"number": 8, "question": "Файлға мәтін жазу үшін қай әдіс қолданылады?", "options": {"A": "print()", "B": "write()", "C": "input()", "D": "add()"}, "answer": "B"},
+      {"number": 9, "question": "Файлмен жұмысты аяқтау үшін не жасау керек?", "options": {"A": "delete()", "B": "stop()", "C": "close()", "D": "exit()"}, "answer": "C"},
+      {"number": 10, "question": "Төмендегі код не істейді? f=open('data.txt','w'); f.write('Hello'); f.close()", "options": {"A": "\"Hello\" басып шығарады", "B": "\"data.txt\" файлына \"Hello\" жазады", "C": "Файлды өшіреді", "D": "Ештеңе істемейді"}, "answer": "B"},
+      {"number": 11, "question": "Файл жоқ болса және 'w' режимімен ашылса не болады?", "options": {"A": "Файл автоматты түрде жасалады", "B": "Қате пайда болады", "C": "Бағдарлама тоқтайды", "D": "Файл оқылады"}, "answer": "A"},
+      {"number": 12, "question": "Файл жоқ болса және 'r' режимімен ашылса не болады?", "options": {"A": "Қате шығады", "B": "Файл автоматты түрде жасалады", "C": "Файл бос күйінде ашылады", "D": "Ештеңе болмайды"}, "answer": "A"},
+      {"number": 13, "question": "with open('file.txt','r') as f: артықшылығы неде?", "options": {"A": "Файл автоматты түрде жабылады", "B": "Код қысқарады", "C": "Файлды екі рет ашады", "D": "Мәтін форматталады"}, "answer": "A"},
+      {"number": 14, "question": "'a' режимінде ашылған файлға жазғанда не болады?", "options": {"A": "Мәтін соңына қосылады", "B": "Мәтін басынан жазылады", "C": "Файл өшіріледі", "D": "Ештеңе жазылмайды"}, "answer": "A"},
+      {"number": 15, "question": "Файлдың бар-жоғын тексеру үшін қандай модуль қолданылады?", "options": {"A": "random", "B": "math", "C": "os", "D": "sys"}, "answer": "C"},
+      {"number": 16, "question": "Файлдағы барлық жолдарды санау үшін не істеуге болады?", "options": {"A": "len(f.read())", "B": "len(f.readlines())", "C": "f.count()", "D": "f.total()"}, "answer": "B"},
+      {"number": 17, "question": "Файлды оқу және жазу режимінде ашу үшін қай режим қолданылады?", "options": {"A": "\"rw\"", "B": "\"r+\"", "C": "\"w+\"", "D": "\"a+\""}, "answer": "B"},
+      {"number": 18, "question": "f=open('test.txt','r'); print(f.readline()); f.close() не істейді?", "options": {"A": "Файлдан бір жол оқиды", "B": "Файлды өшіреді", "C": "Файлды жазады", "D": "Қате шығарады"}, "answer": "A"},
+      {"number": 19, "question": "Файлды автоматты түрде жабу тәсілі:", "options": {"A": "with open() as", "B": "open() + close()", "C": "try-except", "D": "import file"}, "answer": "A"},
+      {"number": 20, "question": "Файлға жаңа деректерді қосу үшін қай режим қолайлы?", "options": {"A": "\"w\"", "B": "\"r\"", "C": "\"a\"", "D": "\"r+\""}, "answer": "C"}
+    ],
+    "tasks": [
+      {"title": "1. Файлға жазу және оқу", "goal": "open(), 'w' және 'r' режимдерін қолдану", "code": "f=open('info.txt','w')\nf.write('Python – қуатты тіл!\\nОны үйрену қызық!')\nf.close()\n\nf=open('info.txt','r')\nprint(f.read())\nf.close()"},
+      {"title": "2. Файлды жол-жолымен оқу", "goal": "readline() және readlines() әдістерін қолдану", "code": "f=open('students.txt','r')\nlines=f.readlines()\nprint('Жолдар саны:',len(lines))\nfor line in lines:\n    print(line.strip())\nf.close()"},
+      {"title": "3. Қосу режимі (append)", "goal": "Файлды өшірмей жаңа жол қосу", "code": "f=open('students.txt','a')\nf.write('\\nЖаңа студент: Аружан')\nf.close()\nprint('Файлға жаңа жол қосылды.')"},
+      {"title": "4. with open() қолдану", "goal": "Файлды автоматты жабу", "code": "with open('students.txt','r') as f:\n    for i,line in enumerate(f,start=1):\n        print(f'{i}-жол: {line.strip()}')"}
+    ]
+  },
+  "ru": {
+    "level": "Начальный",
+    "questions": [
+      {"number": 1, "question": "Какая функция используется для открытия файла в Python?", "options": {"A": "open()", "B": "file()", "C": "fopen()", "D": "read()"}, "answer": "A"},
+      {"number": 2, "question": "Какой параметр используется для открытия файла в режиме чтения?", "options": {"A": "\"w\"", "B": "\"r\"", "C": "\"a\"", "D": "\"x\""}, "answer": "B"},
+      {"number": 3, "question": "Как обозначается режим записи файла?", "options": {"A": "\"r\"", "B": "\"a\"", "C": "\"w\"", "D": "\"rw\""}, "answer": "C"},
+      {"number": 4, "question": "Какой режим нужен для добавления данных в файл?", "options": {"A": "\"w\"", "B": "\"r+\"", "C": "\"a\"", "D": "\"rw\""}, "answer": "C"},
+      {"number": 5, "question": "Какой метод используется для чтения всего содержимого файла?", "options": {"A": "readline()", "B": "readlines()", "C": "read()", "D": "write()"}, "answer": "C"},
+      {"number": 6, "question": "Какой метод используется для чтения файла построчно?", "options": {"A": "read()", "B": "readall()", "C": "readline()", "D": "input()"}, "answer": "C"},
+      {"number": 7, "question": "Что возвращает метод readlines()?", "options": {"A": "Одну строку", "B": "Имя файла", "C": "Список строк", "D": "Текст без переводов строк"}, "answer": "C"},
+      {"number": 8, "question": "Какой метод используется для записи текста в файл?", "options": {"A": "print()", "B": "write()", "C": "input()", "D": "add()"}, "answer": "B"},
+      {"number": 9, "question": "Что нужно сделать после окончания работы с файлом?", "options": {"A": "delete()", "B": "stop()", "C": "close()", "D": "exit()"}, "answer": "C"},
+      {"number": 10, "question": "Что делает код: f=open('data.txt','w'); f.write('Hello'); f.close()", "options": {"A": "Выводит 'Hello' на экран", "B": "Записывает 'Hello' в файл data.txt", "C": "Удаляет файл", "D": "Ничего"}, "answer": "B"},
+      {"number": 11, "question": "Если файла нет и он открыт в режиме 'w', что произойдёт?", "options": {"A": "Файл создаётся", "B": "Ошибка", "C": "Программа завершается", "D": "Файл читается"}, "answer": "A"},
+      {"number": 12, "question": "Если файла нет и он открыт в режиме 'r', что произойдёт?", "options": {"A": "Ошибка", "B": "Файл создаётся", "C": "Открывается пустой файл", "D": "Ничего"}, "answer": "A"},
+      {"number": 13, "question": "В чём преимущество конструкции with open('file.txt','r') as f:", "options": {"A": "Файл закрывается автоматически", "B": "Код короче", "C": "Файл открывается дважды", "D": "Форматирует текст"}, "answer": "A"},
+      {"number": 14, "question": "Что произойдёт при записи в файл, открытый в режиме 'a'?", "options": {"A": "Текст добавится в конец", "B": "Текст перезапишет файл", "C": "Файл удалится", "D": "Ничего не произойдёт"}, "answer": "A"},
+      {"number": 15, "question": "Какой модуль используется для проверки существования файла?", "options": {"A": "random", "B": "math", "C": "os", "D": "sys"}, "answer": "C"},
+      {"number": 16, "question": "Как посчитать количество строк в файле?", "options": {"A": "len(f.read())", "B": "len(f.readlines())", "C": "f.count()", "D": "f.total()"}, "answer": "B"},
+      {"number": 17, "question": "Какой режим используется для чтения и записи одновременно?", "options": {"A": "\"rw\"", "B": "\"r+\"", "C": "\"w+\"", "D": "\"a+\""}, "answer": "B"},
+      {"number": 18, "question": "Что делает f=open('test.txt','r'); print(f.readline()); f.close()?", "options": {"A": "Читает одну строку", "B": "Удаляет файл", "C": "Записывает данные", "D": "Ошибка"}, "answer": "A"},
+      {"number": 19, "question": "Как автоматически закрыть файл?", "options": {"A": "with open() as", "B": "open() + close()", "C": "try-except", "D": "import file"}, "answer": "A"},
+      {"number": 20, "question": "Какой режим подходит для добавления данных в файл?", "options": {"A": "\"w\"", "B": "\"r\"", "C": "\"a\"", "D": "\"r+\""}, "answer": "C"}
+    ],
+    "tasks": [
+      {"title": "1. Запись и чтение файла", "goal": "Использование режимов open(), 'w' и 'r'", "code": "f=open('info.txt','w')\nf.write('Python — мощный язык!\\nУчить его интересно!')\nf.close()\n\nf=open('info.txt','r')\nprint(f.read())\nf.close()"},
+      {"title": "2. Построчное чтение файла", "goal": "Использовать readline() и readlines()", "code": "f=open('students.txt','r')\nlines=f.readlines()\nprint('Количество строк:',len(lines))\nfor line in lines:\n    print(line.strip())\nf.close()"},
+      {"title": "3. Режим добавления (append)", "goal": "Добавление данных без удаления существующих", "code": "f=open('students.txt','a')\nf.write('\\nНовый студент: Анна')\nf.close()\nprint('Новая строка добавлена.')"},
+      {"title": "4. with open()", "goal": "Автоматическое закрытие файла", "code": "with open('students.txt','r') as f:\n    for i,line in enumerate(f,start=1):\n        print(f'{i}-я строка: {line.strip()}')"}
+    ]
+  },
+  "en": {
+    "level": "Beginner",
+    "questions": [
+      {"number": 1, "question": "Which function is used to open a file in Python?", "options": {"A": "open()", "B": "file()", "C": "fopen()", "D": "read()"}, "answer": "A"},
+      {"number": 2, "question": "Which parameter is used to open a file in read mode?", "options": {"A": "\"w\"", "B": "\"r\"", "C": "\"a\"", "D": "\"x\""}, "answer": "B"},
+      {"number": 3, "question": "Which mode is used to write to a file?", "options": {"A": "\"r\"", "B": "\"a\"", "C": "\"w\"", "D": "\"rw\""}, "answer": "C"},
+      {"number": 4, "question": "Which mode is used to append data to a file?", "options": {"A": "\"w\"", "B": "\"r+\"", "C": "\"a\"", "D": "\"rw\""}, "answer": "C"},
+      {"number": 5, "question": "Which method reads the entire content of a file?", "options": {"A": "readline()", "B": "readlines()", "C": "read()", "D": "write()"}, "answer": "C"},
+      {"number": 6, "question": "Which method reads a file line by line?", "options": {"A": "read()", "B": "readall()", "C": "readline()", "D": "input()"}, "answer": "C"},
+      {"number": 7, "question": "What does readlines() return?", "options": {"A": "A single line", "B": "File name", "C": "A list of lines", "D": "All text as one line"}, "answer": "C"},
+      {"number": 8, "question": "Which method writes text into a file?", "options": {"A": "print()", "B": "write()", "C": "input()", "D": "add()"}, "answer": "B"},
+      {"number": 9, "question": "What must be done after working with a file?", "options": {"A": "delete()", "B": "stop()", "C": "close()", "D": "exit()"}, "answer": "C"},
+      {"number": 10, "question": "What does f=open('data.txt','w'); f.write('Hello'); f.close() do?", "options": {"A": "Prints 'Hello'", "B": "Writes 'Hello' to data.txt", "C": "Deletes the file", "D": "Does nothing"}, "answer": "B"},
+      {"number": 11, "question": "If the file doesn't exist and is opened with 'w', what happens?", "options": {"A": "The file is created", "B": "An error occurs", "C": "Program stops", "D": "Reads file"}, "answer": "A"},
+      {"number": 12, "question": "If the file doesn't exist and is opened with 'r', what happens?", "options": {"A": "Error", "B": "File is created", "C": "Opens empty file", "D": "Nothing happens"}, "answer": "A…the file continues:  "},
+      {"number": 13, "question": "What is the advantage of using with open('file.txt','r') as f: ?", "options": {"A": "File closes automatically", "B": "Code becomes longer", "C": "Opens twice", "D": "Formats text"}, "answer": "A"},
+      {"number": 14, "question": "When a file is opened in 'a' mode and written to, what happens?", "options": {"A": "Text is added to the end", "B": "Overwrites file", "C": "Deletes file", "D": "Nothing"}, "answer": "A"},
+      {"number": 15, "question": "Which module is used to check if a file exists?", "options": {"A": "random", "B": "math", "C": "os", "D": "sys"}, "answer": "C"},
+      {"number": 16, "question": "How can you count the number of lines in a file?", "options": {"A": "len(f.read())", "B": "len(f.readlines())", "C": "f.count()", "D": "f.total()"}, "answer": "B"},
+      {"number": 17, "question": "Which mode is used to open a file for both reading and writing?", "options": {"A": "\"rw\"", "B": "\"r+\"", "C": "\"w+\"", "D": "\"a+\""}, "answer": "B"},
+      {"number": 18, "question": "What does f=open('test.txt','r'); print(f.readline()); f.close() do?", "options": {"A": "Reads one line", "B": "Deletes file", "C": "Writes data", "D": "Error"}, "answer": "A"},
+      {"number": 19, "question": "How can a file be automatically closed?", "options": {"A": "with open() as", "B": "open() + close()", "C": "try-except", "D": "import file"}, "answer": "A"},
+      {"number": 20, "question": "Which mode is suitable for adding new data to a file?", "options": {"A": "\"w\"", "B": "\"r\"", "C": "\"a\"", "D": "\"r+\""}, "answer": "C"}
+    ],
+    "tasks": [
+      {"title": "1. Write and Read File", "goal": "Use open(), 'w' and 'r' modes", "code": "f=open('info.txt','w')\nf.write('Python is a powerful language!\\nIt is fun to learn!')\nf.close()\n\nf=open('info.txt','r')\nprint(f.read())\nf.close()"},
+      {"title": "2. Read Line by Line", "goal": "Use readline() and readlines()", "code": "f=open('students.txt','r')\nlines=f.readlines()\nprint('Number of lines:',len(lines))\nfor line in lines:\n    print(line.strip())\nf.close()"},
+      {"title": "3. Append Mode", "goal": "Add data without erasing file", "code": "f=open('students.txt','a')\nf.write('\\nNew student: Alice')\nf.close()\nprint('New line added.')"},
+      {"title": "4. Using with open()", "goal": "Automatic closing of file", "code": "with open('students.txt','r') as f:\n    for i,line in enumerate(f,start=1):\n        print(f'Line {i}: {line.strip()}')"}
+    ]
+  }
 }

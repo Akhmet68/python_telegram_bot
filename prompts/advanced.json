@@ -1,0 +1,104 @@
+{
+  "kz": {
+    "level": "Advanced",
+    "questions": [
+      {"number": 1, "question": "Python тілінде класс қалай жарияланады?", "options": {"A": "def", "B": "class", "C": "object", "D": "function"}, "answer": "B"},
+      {"number": 2, "question": "self параметрі не үшін қолданылады?", "options": {"A": "Айнымалыны сақтау", "B": "Класс әдістеріне қатынау", "C": "Модульді импорттау", "D": "Функцияны шақыру"}, "answer": "B"},
+      {"number": 3, "question": "__init__ әдісінің мақсаты не?", "options": {"A": "Объектіні инициализациялау", "B": "Класс атауын өзгерту", "C": "Класс жою", "D": "Файл жазу"}, "answer": "A"},
+      {"number": 4, "question": "Мұрагерлік (inheritance) дегеніміз не?", "options": {"A": "Басқа кластан қасиеттерді алу", "B": "Айнымалыны көшіру", "C": "Модульді жою", "D": "Файл жасау"}, "answer": "A"},
+      {"number": 5, "question": "Полиморфизм дегеніміз не?", "options": {"A": "Көптүрлілік", "B": "Бір функцияның әртүрлі орындалуы", "C": "Айнымалы атауының қайталануы", "D": "Тізім түрлендіру"}, "answer": "B"},
+      {"number": 6, "question": "Инкапсуляция не үшін керек?", "options": {"A": "Деректерді қорғау", "B": "Файлды ашу", "C": "Айнымалыны көбейту", "D": "Цикл құру"}, "answer": "A"},
+      {"number": 7, "question": "Python-да модуль импорттау үшін не қолданылады?", "options": {"A": "use", "B": "require", "C": "import", "D": "include"}, "answer": "C"},
+      {"number": 8, "question": "Файлдан JSON оқу үшін қандай модуль қолданылады?", "options": {"A": "os", "B": "sys", "C": "json", "D": "csv"}, "answer": "C"},
+      {"number": 9, "question": "decorator не істейді?", "options": {"A": "Функцияны өзгертеді", "B": "Файл жазады", "C": "Цикл жасайды", "D": "Айнымалы жасайды"}, "answer": "A"},
+      {"number": 10, "question": "async/await не үшін қолданылады?", "options": {"A": "Асинхронды бағдарламалау", "B": "Қате өңдеу", "C": "Модуль қосу", "D": "Файл жою"}, "answer": "A"},
+      {"number": 11, "question": "try/except блогында finally қашан орындалады?", "options": {"A": "Әрқашан", "B": "Қате болғанда ғана", "C": "Қате болмағанда ғана", "D": "Ешқашан"}, "answer": "A"},
+      {"number": 12, "question": "Файлмен жұмыс істеу кезінде 'with open()' не істейді?", "options": {"A": "Файлды автоматты түрде жабады", "B": "Файлды жояды", "C": "Файлды көшіреді", "D": "Файлды ашады ғана"}, "answer": "A"},
+      {"number": 13, "question": "Генератор дегеніміз не?", "options": {"A": "return орнына yield қолданатын функция", "B": "Цикл", "C": "Модуль", "D": "Айнымалы"}, "answer": "A"},
+      {"number": 14, "question": "set құрылымы не үшін керек?", "options": {"A": "Қайталанбайтын мәндер сақтау", "B": "Мәтінмен жұмыс істеу", "C": "Файл ашу", "D": "Функция жазу"}, "answer": "A"},
+      {"number": 15, "question": "List comprehension мысалы:", "options": {"A": "[x for x in range(5)]", "B": "(x for x in range(5))", "C": "{x for x in range(5)}", "D": "x for x in range(5)"}, "answer": "A"},
+      {"number": 16, "question": "Модульдер арасындағы тәуелділікті басқару үшін не қолданылады?", "options": {"A": "pip", "B": "os", "C": "sys", "D": "importlib"}, "answer": "A"},
+      {"number": 17, "question": "Python-де көпмұрагерлік бар ма?", "options": {"A": "Иә", "B": "Жоқ"}, "answer": "A"},
+      {"number": 18, "question": "super() не үшін керек?", "options": {"A": "Ата-класстың әдісін шақыру", "B": "Айнымалы жасау", "C": "Файл ашу", "D": "Қате шығару"}, "answer": "A"},
+      {"number": 19, "question": "Оқиғаға негізделген бағдарламалау не үшін керек?", "options": {"A": "UI және боттар үшін", "B": "Файлды сақтау үшін", "C": "Кесте жасау үшін", "D": "Айнымалы жазу үшін"}, "answer": "A"},
+      {"number": 20, "question": "Кластар қай парадигмаға жатады?", "options": {"A": "Процедуралық", "B": "Объектіге бағытталған", "C": "Функционалды", "D": "Модульдік"}, "answer": "B"}
+    ],
+    "tasks": [
+      {"title": "1. Класс пен объект", "goal": "Класс жасау және объект арқылы қол жеткізу", "code": "class Student:\n    def __init__(self,name,grade):\n        self.name=name\n        self.grade=grade\n\n    def info(self):\n        print(f'Аты: {self.name}, Баға: {self.grade}')\n\ns1=Student('Айжан','A')\ns1.info()"},
+      {"title": "2. Мұрагерлік үлгісі", "goal": "Base және Derived класс қолдану", "code": "class Animal:\n    def speak(self):\n        print('Animal speaking')\n\nclass Dog(Animal):\n    def speak(self):\n        print('Dog barking')\n\nobj=Dog()\nobj.speak()"},
+      {"title": "3. Декоратор қолдану", "goal": "Функция мінез-құлқын өзгерту", "code": "def decor(func):\n    def wrapper():\n        print('Басталуы...')\n        func()\n        print('Аяқталды.')\n    return wrapper\n\n@decor\ndef hello():\n    print('Сәлем!')\n\nhello()"},
+      {"title": "4. Асинхронды функция", "goal": "async/await қолдану", "code": "import asyncio\n\nasync def say_hello():\n    await asyncio.sleep(1)\n    print('Сәлем, әлем!')\n\nasyncio.run(say_hello())"}
+    ]
+  },
+  "ru": {
+    "level": "Продвинутый",
+    "questions": [
+      {"number": 1, "question": "Как объявить класс в Python?", "options": {"A": "def", "B": "class", "C": "object", "D": "function"}, "answer": "B"},
+      {"number": 2, "question": "Для чего используется self?", "options": {"A": "Сохраняет переменные", "B": "Доступ к атрибутам объекта", "C": "Импорт модуля", "D": "Вызов функции"}, "answer": "B"},
+      {"number": 3, "question": "Что делает метод __init__?", "options": {"A": "Инициализирует объект", "B": "Удаляет класс", "C": "Создаёт модуль", "D": "Пишет файл"}, "answer": "A"},
+      {"number": 4, "question": "Что такое наследование?", "options": {"A": "Передача свойств родителя", "B": "Копирование переменных", "C": "Удаление функции", "D": "Слияние классов"}, "answer": "A"},
+      {"number": 5, "question": "Что такое полиморфизм?", "options": {"A": "Разные реализации одной функции", "B": "Тип переменной", "C": "Удаление данных", "D": "Форматирование"}, "answer": "A"},
+      {"number": 6, "question": "Для чего нужна инкапсуляция?", "options": {"A": "Скрыть данные", "B": "Писать в файл", "C": "Создавать цикл", "D": "Удалять объекты"}, "answer": "A"},
+      {"number": 7, "question": "Как импортировать модуль?", "options": {"A": "use", "B": "require", "C": "import", "D": "include"}, "answer": "C"},
+      {"number": 8, "question": "Какой модуль нужен для работы с JSON?", "options": {"A": "os", "B": "sys", "C": "json", "D": "csv"}, "answer": "C"},
+      {"number": 9, "question": "Что делает декоратор?", "options": {"A": "Изменяет поведение функции", "B": "Создаёт цикл", "C": "Удаляет модуль", "D": "Создаёт переменную"}, "answer": "A"},
+      {"number": 10, "question": "Для чего нужны async/await?", "options": {"A": "Асинхронное программирование", "B": "Обработка ошибок", "C": "Работа с файлами", "D": "Импорт модулей"}, "answer": "A"},
+      {"number": 11, "question": "Когда выполняется блок finally?", "options": {"A": "Всегда", "B": "Только при ошибке", "C": "Если ошибок нет", "D": "Никогда"}, "answer": "A"},
+      {"number": 12, "question": "Что делает конструкция with open()?", "options": {"A": "Автоматически закрывает файл", "B": "Удаляет файл", "C": "Копирует файл", "D": "Только открывает"}, "answer": "A"},
+      {"number": 13, "question": "Что такое генератор?", "options": {"A": "Функция с yield вместо return", "B": "Цикл", "C": "Класс", "D": "Модуль"}, "answer": "A"},
+      {"number": 14, "question": "Для чего нужен set?", "options": {"A": "Хранение уникальных значений", "B": "Работа со строками", "C": "Создание файла", "D": "Форматирование"}, "answer": "A"},
+      {"number": 15, "question": "Пример list comprehension:", "options": {"A": "[x for x in range(5)]", "B": "(x for x in range(5))", "C": "{x for x in range(5)}", "D": "x for x in range(5)"}, "answer": "A"},
+      {"number": 16, "question": "Чем управляет pip?", "options": {"A": "Модулями и зависимостями", "B": "Файлами", "C": "Циклами", "D": "Классами"}, "answer": "A"},
+      {"number": 17, "question": "Есть ли множественное наследование в Python?", "options": {"A": "Да", "B": "Нет"}, "answer": "A"},
+      {"number": 18, "question": "Для чего используется super()?", "options": {"A": "Вызов метода родителя", "B": "Создание переменной", "C": "Удаление класса", "D": "Запись в файл"}, "answer": "A"},
+      {"number": 19, "question": "Для чего используется событийное программирование?", "options": {"A": "Для UI и ботов", "B": "Для работы с файлами", "C": "Для циклов", "D": "Для обработки текста"}, "answer": "A"},
+      {"number": 20, "question": "К какому типу парадигм относятся классы?", "options": {"A": "Процедурная", "B": "Объектно-ориентированная", "C": "Функциональная", "D": "Императивная"}, "answer": "B"}
+    ],
+    "tasks": [
+      {"title": "1. Классы и объекты", "goal": "Создать класс и экземпляр", "code": "class Student:\n    def __init__(self,name,grade):\n        self.name=name\n        self.grade=grade\n\n    def info(self):\n        print(f'Имя: {self.name}, Оценка: {self.grade}')\n\ns1=Student('Иван','A')\ns1.info()"},
+      {"title": "2. Наследование", "goal": "Пример базового и дочернего класса", "code": "class Animal:\n    def speak(self):\n        print('Animal speaking')\n\nclass Dog(Animal):\n    def speak(self):\n        print('Dog barking')\n\nobj=Dog()\nobj.speak()"},
+      {"title": "3. Декораторы", "goal": "Изменение поведения функции", "code": "def decor(func):\n    def wrapper():\n        print('Начало...')\n        func()\n        print('Конец.')\n    return wrapper\n\n@decor\ndef hello():\n    print('Привет!')\n\nhello()"},
+      {"title": "4. Асинхронные функции", "goal": "async/await пример", "code": "import asyncio\n\nasync def say_hello():\n    await asyncio.sleep(1)\n    print('Привет, мир!')\n\nasyncio.run(say_hello())"}
+    ]
+  },
+  "en": {
+    "level": "Advanced",
+    "questions": [
+      {"number": 1, "question": "How do you declare a class in Python?", "options": {"A": "def", "B": "class", "C": "object", "D": "function"}, "answer": "B"},
+      {"number": 2, "question": "What is the purpose of self?", "options": {"A": "Store variables", "B": "Access instance attributes", "C": "Import modules", "D": "Call functions"}, "answer": "B"},
+      {"number": 3, "question": "What does __init__ do?", "options": {"A": "Initializes object", "B": "Deletes class", "C": "Creates module", "D": "Writes file"}, "answer": "A"},
+      {"number": 4, "question": "What is inheritance?", "options": {"A": "Child class using parent properties", "B": "Copying variables", "C": "Deleting function", "D": "Combining files"}, "answer": "A"},
+      {"number": 5, "question": "What is polymorphism?", "options": {"A": "Same function with different behavior", "B": "Data repetition", "C": "Loop type", "D": "String formatting"}, "answer": "A"},
+      {"number": 6, "question": "What is encapsulation used for?", "options": {"A": "Protect data", "B": "Open file", "C": "Create loop", "D": "Sort list"}, "answer": "A"},
+      {"number": 7, "question": "Which keyword imports modules?", "options": {"A": "use", "B": "require", "C": "import", "D": "include"}, "answer": "C"},
+      {"number": 8, "question": "Which module handles JSON?", "options": {"A": "os", "B": "sys", "C": "json", "D": "csv"}, "answer": "C"},
+      {"number": 9, "question": "What does a decorator do?", "options": {"A": "Modify function behavior", "B": "Create file", "C": "Loop execution", "D": "Delete data"}, "answer": "A"},
+      {"number": 10, "question": "What is async/await used for?", "options": {"A": "Asynchronous programming", "B": "Error handling", "C": "File access", "D": "Importing"}, "answer": "A"},
+      {"number": 11, "question": "When does 'finally' execute?", "options": {"A": "Always", "B": "Only if error", "C": "If no error", "D": "Never"}, "answer": "A"},
+      {"number": 12, "question": "What does 'with open()' do?", "options": {"A": "Automatically closes file", "B": "Deletes…continuing the English section (and completing the file): file", "C": "Copies file", "D": "Only opens file"}, "answer": "A"},
+      {"number": 13, "question": "What is a generator?", "options": {"A": "Function using yield instead of return", "B": "Loop", "C": "Class", "D": "Module"}, "answer": "A"},
+      {"number": 14, "question": "What is a set used for?", "options": {"A": "Store unique values", "B": "Work with strings", "C": "Write files", "D": "Format output"}, "answer": "A"},
+      {"number": 15, "question": "Which is a list comprehension example?", "options": {"A": "[x for x in range(5)]", "B": "(x for x in range(5))", "C": "{x for x in range(5)}", "D": "x for x in range(5)"}, "answer": "A"},
+      {"number": 16, "question": "What does pip manage?", "options": {"A": "Modules and dependencies", "B": "Loops", "C": "Strings", "D": "Files"}, "answer": "A"},
+      {"number": 17, "question": "Does Python support multiple inheritance?", "options": {"A": "Yes", "B": "No"}, "answer": "A"},
+      {"number": 18, "question": "What is super() used for?", "options": {"A": "Call parent method", "B": "Create variable", "C": "Delete class", "D": "Write file"}, "answer": "A"},
+      {"number": 19, "question": "Event-driven programming is used for what?", "options": {"A": "UI and bots", "B": "File handling", "C": "Loops", "D": "Error logging"}, "answer": "A"},
+      {"number": 20, "question": "Which paradigm do classes belong to?", "options": {"A": "Procedural", "B": "Object-Oriented", "C": "Functional", "D": "Declarative"}, "answer": "B"}
+      {"number": 12, "question": "What does 'with open()' do?", "options": {"A": "Automatically closes file", "B": "Deletes file", "C": "Copies file", "D": "Only opens file"}, "answer": "A"},
+      {"number": 13, "question": "What is a generator?", "options": {"A": "Function using yield instead of return", "B": "Loop", "C": "Class", "D": "Module"}, "answer": "A"},
+      {"number": 14, "question": "What is a set used for?", "options": {"A": "Store unique values", "B": "Work with strings", "C": "Write files", "D": "Format output"}, "answer": "A"},
+      {"number": 15, "question": "Which is a list comprehension example?", "options": {"A": "[x for x in range(5)]", "B": "(x for x in range(5))", "C": "{x for x in range(5)}", "D": "x for x in range(5)"}, "answer": "A"},
+      {"number": 16, "question": "What does pip manage?", "options": {"A": "Modules and dependencies", "B": "Loops", "C": "Strings", "D": "Files"}, "answer": "A"},
+      {"number": 17, "question": "Does Python support multiple inheritance?", "options": {"A": "Yes", "B": "No"}, "answer": "A"},
+      {"number": 18, "question": "What is super() used for?", "options": {"A": "Call parent method", "B": "Create variable", "C": "Delete class", "D": "Write file"}, "answer": "A"},
+      {"number": 19, "question": "Event-driven programming is used for what?", "options": {"A": "UI and bots", "B": "File handling", "C": "Loops", "D": "Error logging"}, "answer": "A"},
+      {"number": 20, "question": "Which paradigm do classes belong to?", "options": {"A": "Procedural", "B": "Object-Oriented", "C": "Functional", "D": "Declarative"}, "answer": "B"}
+    ],
+    "tasks": [
+      {"title": "1. Classes and Objects", "goal": "Define a class and create an instance", "code": "class Student:\n    def __init__(self,name,grade):\n        self.name=name\n        self.grade=grade\n\n    def info(self):\n        print(f'Name: {self.name}, Grade: {self.grade}')\n\ns1=Student('Alice','A')\ns1.info()"},
+      {"title": "2. Inheritance Example", "goal": "Use base and derived classes", "code": "class Animal:\n    def speak(self):\n        print('Animal speaking')\n\nclass Dog(Animal):\n    def speak(self):\n        print('Dog barking')\n\nobj=Dog()\nobj.speak()"},
+      {"title": "3. Decorator Example", "goal": "Modify function behavior", "code": "def decor(func):\n    def wrapper():\n        print('Start...')\n        func()\n        print('End.')\n    return wrapper\n\n@decor\ndef hello():\n    print('Hello!')\n\nhello()"},
+      {"title": "4. Async Function", "goal": "Use async/await", "code": "import asyncio\n\nasync def say_hello():\n    await asyncio.sleep(1)\n    print('Hello, world!')\n\nasyncio.run(say_hello())"}
+    ]
+  }
+}

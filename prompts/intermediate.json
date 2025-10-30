@@ -1,0 +1,96 @@
+{
+  "kz": {
+    "level": "Intermediate",
+    "questions": [
+      {"number": 1, "question": "Python тілінде тізім (list) қалай жасалады?", "options": {"A": "{}", "B": "[]", "C": "()", "D": "<>"}, "answer": "B"},
+      {"number": 2, "question": "Тізімнің ұзындығын табу үшін қандай функция қолданылады?", "options": {"A": "count()", "B": "length()", "C": "len()", "D": "size()"}, "answer": "C"},
+      {"number": 3, "question": "Тізімнің соңына элемент қосу үшін не қолданылады?", "options": {"A": "insert()", "B": "append()", "C": "add()", "D": "push()"}, "answer": "B"},
+      {"number": 4, "question": "Тізімнің элементін жою үшін қандай әдіс бар?", "options": {"A": "del", "B": "remove()", "C": "pop()", "D": "Барлығы дұрыс"}, "answer": "D"},
+      {"number": 5, "question": "Сөздік (dictionary) қалай құрылады?", "options": {"A": "[]", "B": "{}", "C": "()", "D": "<>"}, "answer": "B"},
+      {"number": 6, "question": "Сөздіктегі барлық кілттерді алу үшін не қолданылады?", "options": {"A": "keys()", "B": "values()", "C": "items()", "D": "all()"}, "answer": "A"},
+      {"number": 7, "question": "Функцияны анықтау үшін қандай кілт сөз қолданылады?", "options": {"A": "func", "B": "define", "C": "def", "D": "lambda"}, "answer": "C"},
+      {"number": 8, "question": "Функция мәнін қайтару үшін не жазылады?", "options": {"A": "send", "B": "give", "C": "output", "D": "return"}, "answer": "D"},
+      {"number": 9, "question": "try/except блогы не үшін қолданылады?", "options": {"A": "Цикл жасау үшін", "B": "Қате өңдеу үшін", "C": "Файл ашу үшін", "D": "Кесте жасау үшін"}, "answer": "B"},
+      {"number": 10, "question": "import math деген не істейді?", "options": {"A": "Файл ашады", "B": "Модульді импорттайды", "C": "Функция жасайды", "D": "Айнымалы анықтайды"}, "answer": "B"},
+      {"number": 11, "question": "Тізім элементтерін сұрыптау үшін қандай әдіс қолданылады?", "options": {"A": "sort()", "B": "order()", "C": "arrange()", "D": "set()"}, "answer": "A"},
+      {"number": 12, "question": "Қате болмаған жағдайда try блогынан кейін не жазылады?", "options": {"A": "finally", "B": "except", "C": "else", "D": "break"}, "answer": "C"},
+      {"number": 13, "question": "Модуль дегеніміз не?", "options": {"A": "Кітапхана", "B": "Файл", "C": "Код бөлігі", "D": "Барлығы дұрыс"}, "answer": "D"},
+      {"number": 14, "question": "Функция аргументтері дегеніміз не?", "options": {"A": "Функция атауы", "B": "Қайтарылатын мән", "C": "Функцияға берілетін деректер", "D": "Модульдер"}, "answer": "C"},
+      {"number": 15, "question": "lambda функциясы не үшін керек?", "options": {"A": "Анонимді функция жасау", "B": "Қате табу", "C": "Файл оқу", "D": "Модуль қосу"}, "answer": "A"},
+      {"number": 16, "question": "Қате болмаса да finally блогы орындала ма?", "options": {"A": "Иә", "B": "Жоқ"}, "answer": "A"},
+      {"number": 17, "question": "Сөздікке жаңа элемент қосу үшін не жазылады?", "options": {"A": "dict.append()", "B": "dict.add()", "C": "dict[key] = value", "D": "dict.push()"}, "answer": "C"},
+      {"number": 18, "question": "Сөздіктегі мәндерді алу үшін не қолданылады?", "options": {"A": "values()", "B": "get()", "C": "items()", "D": "Барлығы дұрыс"}, "answer": "D"},
+      {"number": 19, "question": "Python стандартты модульдерінің мысалы:", "options": {"A": "math", "B": "os", "C": "random", "D": "Барлығы дұрыс"}, "answer": "D"},
+      {"number": 20, "question": "Қате болғанда қандай блок орындалады?", "options": {"A": "try", "B": "except", "C": "else", "D": "finally"}, "answer": "B"}
+    ],
+    "tasks": [
+      {"title": "1. Тізімдермен жұмыс", "goal": "append(), remove(), sort() қолдану", "code": "numbers=[5,3,8,1]\nnumbers.append(7)\nnumbers.remove(3)\nnumbers.sort()\nprint(numbers)"},
+      {"title": "2. Сөздік құру", "goal": "dictionary құру және мәнін шығару", "code": "student={'name':'Айдос','age':20,'grade':'A'}\nprint('Аты:',student['name'])\nprint('Жасы:',student.get('age'))"},
+      {"title": "3. Функция және аргумент", "goal": "функция жазып, параметр қолдану", "code": "def greet(name):\n    return f'Сәлем, {name}!'\nprint(greet('Айгерім'))"},
+      {"title": "4. try/except қолдану", "goal": "қате өңдеу үлгісі", "code": "try:\n    num=int(input('Сан енгізіңіз: '))\n    print(10/num)\nexcept ZeroDivisionError:\n    print('Нөлге бөлуге болмайды!')\nfinally:\n    print('Бағдарлама аяқталды.')"}
+    ]
+  },
+  "ru": {
+    "level": "Средний",
+    "questions": [
+      {"number": 1, "question": "Как создать список в Python?", "options": {"A": "{}", "B": "[]", "C": "()", "D": "<>"}, "answer": "B"},
+      {"number": 2, "question": "Как получить длину списка?", "options": {"A": "count()", "B": "length()", "C": "len()", "D": "size()"}, "answer": "C"},
+      {"number": 3, "question": "Как добавить элемент в конец списка?", "options": {"A": "insert()", "B": "append()", "C": "add()", "D": "push()"}, "answer": "B"},
+      {"number": 4, "question": "Как удалить элемент из списка?", "options": {"A": "del", "B": "remove()", "C": "pop()", "D": "Все ответы верны"}, "answer": "D"},
+      {"number": 5, "question": "Как создаётся словарь?", "options": {"A": "[]", "B": "{}", "C": "()", "D": "<>"}, "answer": "B"},
+      {"number": 6, "question": "Как получить все ключи словаря?", "options": {"A": "keys()", "B": "values()", "C": "items()", "D": "all()"}, "answer": "A"},
+      {"number": 7, "question": "Какое ключевое слово используется для определения функции?", "options": {"A": "func", "B": "define", "C": "def", "D": "lambda"}, "answer": "C"},
+      {"number": 8, "question": "Что делает оператор return?", "options": {"A": "Отправляет данные", "B": "Возвращает значение из функции", "C": "Выводит на экран", "D": "Закрывает программу"}, "answer": "B"},
+      {"number": 9, "question": "Для чего используется блок try/except?", "options": {"A": "Для цикла", "B": "Для обработки ошибок", "C": "Для открытия файла", "D": "Для сортировки"}, "answer": "B"},
+      {"number": 10, "question": "Что делает команда import math?", "options": {"A": "Открывает файл", "B": "Импортирует модуль", "C": "Создаёт функцию", "D": "Определяет переменную"}, "answer": "B"},
+      {"number": 11, "question": "Как отсортировать список?", "options": {"A": "sort()", "B": "order()", "C": "arrange()", "D": "set()"}, "answer": "A"},
+      {"number": 12, "question": "Что выполняется, если в try не возникло ошибок?", "options": {"A": "finally", "B": "except", "C": "else", "D": "break"}, "answer": "C"},
+      {"number": 13, "question": "Что такое модуль?", "options": {"A": "Библиотека", "B": "Файл", "C": "Часть кода", "D": "Все ответы верны"}, "answer": "D"},
+      {"number": 14, "question": "Что такое аргументы функции?", "options": {"A": "Имя функции", "B": "Возвращаемое значение", "C": "Данные, передаваемые в функцию", "D": "Модули"}, "answer": "C"},
+      {"number": 15, "question": "Для чего используется lambda-функция?", "options": {"A": "Создать анонимную функцию", "B": "Проверить ошибки", "C": "Открыть файл", "D": "Добавить модуль"}, "answer": "A"},
+      {"number": 16, "question": "Выполняется ли finally, если нет ошибок?", "options": {"A": "Да", "B": "Нет"}, "answer": "A"},
+      {"number": 17, "question": "Как добавить элемент в словарь?", "options": {"A": "dict.append()", "B": "dict.add()", "C": "dict[key] = value", "D": "dict.push()"}, "answer": "C"},
+      {"number": 18, "question": "Как получить значения словаря?", "options": {"A": "values()", "B": "get()", "C": "items()", "D": "Все ответы верны"}, "answer": "D"},
+      {"number": 19, "question": "Пример стандартных модулей Python:", "options": {"A": "math", "B": "os", "C": "random", "D": "Все ответы верны"}, "answer": "D"},
+      {"number": 20, "question": "Какой блок выполняется при ошибке?", "options": {"A": "try", "B": "except", "C": "else", "D": "finally"}, "answer": "B"}
+    ],
+    "tasks": [
+      {"title": "1. Работа со списками", "goal": "Использовать append(), remove(), sort()", "code": "numbers=[5,3,8,1]\nnumbers.append(7)\nnumbers.remove(3)\nnumbers.sort()\nprint(numbers)"},
+      {"title": "2. Создание словаря", "goal": "Создать словарь и вывести значения", "code": "student={'name':'Иван','age':20,'grade':'A'}\nprint('Имя:',student['name'])\nprint('Возраст:',student.get('age'))"},
+      {"title": "3. Функция с аргументом", "goal": "Создать функцию с параметром", "code": "def greet(name):\n    return f'Привет, {name}!'\nprint(greet('Анна'))"},
+      {"title": "4. Использование try/except", "goal": "Обработка ошибок", "code": "try:\n    num=int(input('Введите число: '))\n    print(10/num)\nexcept ZeroDivisionError:\n    print('Делить на ноль нельзя!')\nfinally:\n    print('Программа завершена.')"}
+    ]
+  },
+  "en": {
+    "level": "Intermediate",
+    "questions": [
+      {"number": 1, "question": "How do you create a list in Python?", "options": {"A": "{}", "B": "[]", "C": "()", "D": "<>"}, "answer": "B"},
+      {"number": 2, "question": "Which function returns the length of a list?", "options": {"A": "count()", "B": "length()", "C": "len()", "D": "size()"}, "answer": "C"},
+      {"number": 3, "question": "Which method adds an element to the end of a list?", "options": {"A": "insert()", "B": "append()", "C": "add()", "D": "push()"}, "answer": "B"},
+      {"number": 4, "question": "Which methods remove elements from a list?", "options": {"A": "del", "B": "remove()", "C": "pop()", "D": "All correct"}, "answer": "D"},
+      {"number": 5, "question": "How do you create a dictionary?", "options": {"A": "[]", "B": "{}", "C": "()", "D": "<>"}, "answer": "B"},
+      {"number": 6, "question": "Which method returns all dictionary keys?", "options": {"A": "keys()", "B": "values()", "C": "items()", "D": "all()"}, "answer": "A"},
+      {"number": 7, "question": "Which keyword defines a function?", "options": {"A": "func", "B": "define", "C": "def", "D": "lambda"}, "answer": "C"},
+      {"number": 8, "question": "What does 'return' do in a function?", "options": {"A": "Prints output", "B": "Returns a value", "C": "Stops the code", "D": "Creates variable"}, "answer": "B"},
+      {"number": 9, "question": "What is try/except used for?", "options": {"A": "Loops", "B": "Error handling", "C": "File reading", "D": "Sorting"}, "answer": "B"},
+      {"number": 10, "question": "What does 'import math' do?", "options": {"A": "Opens a file", "B": "Imports module", "C": "Defines function", "D": "Creates variable"}, "answer": "B"},
+      {"number": 11, "question": "Which method sorts a list?", "options": {"A": "sort()", "B": "order()", "C": "arrange()", "D": "set()"}, "answer": "A"},
+      {"number": 12, "question": "Which block executes if no error occurs?", "options": {"A": "finally", "B": "except", "C": "else", "D": "break"}, "answer": "C"},
+      {"number": 13, "question": "What is a module?", "options": {"A": "Library", "B": "File", "C": "Part of code", "D": "All correct"}, "answer": "D"},
+      {"number": 14, "question": "What are function arguments?", "options": {"A": "Function name", "B": "Returned value", "C": "Data passed to a function", "D": "Modules"}, "answer": "C"},
+      {"number": 15, "question": "What is a lambda function used for?", "options": {"A": "Anonymous function", "B": "Error checking", "C": "File reading", "D": "Import module"}, "answer": "A"},
+      {"number": 16, "question": "Does 'finally' execute if no errors occur?", "options": {"A": "Yes", "B": "No"}, "answer": "A"},
+      {"number": 17, "question": "How to add an element to a dictionary?", "options": {"A": "dict.append()", "B": "dict.add()", "C": "dict[key] = value", "D": "dict.push()"}, "answer": "C"},
+      {"number": 18, "question": "How to access dictionary values?", "options": {"A": "values()", "B": "get()", "C": "items()", "D": "All correct"}, "answer": "D"},
+      {"number": 19, "question": "Examples of standard Python modules:", "options": {"A": "math", "B": "os", "C": "random", "D": "All correct"}, "answer": "D"},
+      {"number": 20, "question": "Which block executes when an error occurs?", "options": {"A": "try", "B": "except", "C": "else", "D": "finally"}, "answer": "B"},
+      {"number": 20, "question": "Which block executes when an error occurs?", "options": {"A": "try", "B": "except", "C": "else", "D": "finally"}, "answer": "B"}
+    ],
+    "tasks": [
+      {"title": "1. Working with Lists", "goal": "Use append(), remove(), sort()", "code": "numbers=[5,3,8,1]\nnumbers.append(7)\nnumbers.remove(3)\nnumbers.sort()\nprint(numbers)"},
+      {"title": "2. Create Dictionary", "goal": "Create a dictionary and print its values", "code": "student={'name':'Alice','age':20,'grade':'A'}\nprint('Name:',student['name'])\nprint('Age:',student.get('age'))"},
+      {"title": "3. Function and Argument", "goal": "Write a function with a parameter", "code": "def greet(name):\n    return f'Hello, {name}!'\nprint(greet('Emma'))"},
+      {"title": "4. Using try/except", "goal": "Handle runtime errors", "code": "try:\n    num=int(input('Enter a number: '))\n    print(10/num)\nexcept ZeroDivisionError:\n    print('Cannot divide by zero!')\nfinally:\n    print('Program finished.')"}
+    ]
+  }
+}
