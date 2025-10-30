@@ -1,6 +1,6 @@
 from sqlalchemy import (
     Column, Integer, String, BigInteger, ForeignKey,
-    Boolean, Float, Text, DateTime, func
+    Boolean, Float, Text, DateTime, func, select
 )
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
@@ -8,8 +8,7 @@ from config import DATABASE_URL
 
 Base = declarative_base()
 
-
-# 👤 Таблица пользователей
+# 👤 Пользователи
 class Student(Base):
     __tablename__ = "students"
 
@@ -23,14 +22,13 @@ class Student(Base):
     score = Column(Integer, default=0)
     registered_at = Column(DateTime(timezone=True), server_default=func.now())
 
-    # Связи с другими таблицами
     progress = relationship("Progress", back_populates="student", cascade="all, delete-orphan")
     statistics = relationship("Statistics", back_populates="student", uselist=False)
     feedback = relationship("Feedback", back_populates="student", cascade="all, delete-orphan")
     history = relationship("LessonHistory", back_populates="student", cascade="all, delete-orphan")
 
 
-# 📈 Прогресс пользователя по темам
+# 📈 Прогресс
 class Progress(Base):
     __tablename__ = "progress"
 
@@ -45,7 +43,7 @@ class Progress(Base):
     student = relationship("Student", back_populates="progress")
 
 
-# 🏅 Общая статистика
+# 🏅 Статистика
 class Statistics(Base):
     __tablename__ = "statistics"
 
@@ -58,7 +56,7 @@ class Statistics(Base):
     student = relationship("Student", back_populates="statistics")
 
 
-# 💬 Отзывы пользователей
+# 💬 Отзывы
 class Feedback(Base):
     __tablename__ = "feedback"
 
@@ -85,21 +83,20 @@ class LessonHistory(Base):
     student = relationship("Student", back_populates="history")
 
 
-# ⚙️ Настройка движка и сессии
+# ⚙️ Настройки
 engine = create_async_engine(DATABASE_URL, echo=False, future=True)
 async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
 
-# 🧩 Инициализация базы данных
+# 🧩 Инициализация БД
 async def init_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     print("✅ База данных успешно инициализирована!")
 
 
-# 🔧 Утилиты для работы
+# 👥 Добавить пользователя
 async def add_user(session, tg_id, full_name, group=None, phone=None, language="ru"):
-    """Добавление нового пользователя"""
     new_user = Student(
         tg_id=tg_id,
         full_name=full_name,
@@ -112,40 +109,37 @@ async def add_user(session, tg_id, full_name, group=None, phone=None, language="
     return new_user
 
 
+# 🔄 Обновить прогресс
 async def update_progress(session, user_id, topic, correct, total):
-    """Обновление прогресса пользователя"""
-    progress = await session.execute(
-        func.count(Progress.id).filter(Progress.user_id == user_id, Progress.topic == topic)
+    result = await session.execute(
+        select(Progress).where(Progress.user_id == user_id, Progress.topic == topic)
     )
-    existing = await session.execute(
-        session.query(Progress).filter_by(user_id=user_id, topic=topic)
-    )
-    record = existing.scalar_one_or_none()
+    record = result.scalar_one_or_none()
 
     if record:
         record.correct_answers += correct
         record.total_questions += total
         record.completed = record.correct_answers >= record.total_questions
     else:
-        new_progress = Progress(
+        record = Progress(
             user_id=user_id,
             topic=topic,
             correct_answers=correct,
             total_questions=total
         )
-        session.add(new_progress)
+        session.add(record)
     await session.commit()
 
 
+# 💭 Добавить отзыв
 async def add_feedback(session, user_id, message):
-    """Добавить отзыв"""
     feedback = Feedback(user_id=user_id, message=message)
     session.add(feedback)
     await session.commit()
 
 
+# 📚 Добавить урок в историю
 async def log_lesson(session, user_id, level, topic_title, score=0):
-    """Сохранить историю прохождения урока"""
     history = LessonHistory(
         user_id=user_id,
         lesson_level=level,
