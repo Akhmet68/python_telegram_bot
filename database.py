@@ -8,7 +8,6 @@ from config import DATABASE_URL
 
 Base = declarative_base()
 
-# 👤 Пользователи
 class Student(Base):
     __tablename__ = "students"
 
@@ -28,7 +27,6 @@ class Student(Base):
     history = relationship("LessonHistory", back_populates="student", cascade="all, delete-orphan")
 
 
-# 📈 Прогресс
 class Progress(Base):
     __tablename__ = "progress"
 
@@ -43,7 +41,6 @@ class Progress(Base):
     student = relationship("Student", back_populates="progress")
 
 
-# 🏅 Статистика
 class Statistics(Base):
     __tablename__ = "statistics"
 
@@ -56,7 +53,6 @@ class Statistics(Base):
     student = relationship("Student", back_populates="statistics")
 
 
-# 💬 Отзывы
 class Feedback(Base):
     __tablename__ = "feedback"
 
@@ -68,7 +64,6 @@ class Feedback(Base):
     student = relationship("Student", back_populates="feedback")
 
 
-# 🧾 История уроков
 class LessonHistory(Base):
     __tablename__ = "lesson_history"
 
@@ -83,19 +78,16 @@ class LessonHistory(Base):
     student = relationship("Student", back_populates="history")
 
 
-# ⚙️ Настройки
 engine = create_async_engine(DATABASE_URL, echo=False, future=True)
 async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
 
-# 🧩 Инициализация БД
 async def init_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-    print("✅ База данных успешно инициализирована!")
+    print("База данных успешно инициализирована!")
 
 
-# 👥 Добавить пользователя
 async def add_user(session, tg_id, full_name, group=None, phone=None, language="ru"):
     new_user = Student(
         tg_id=tg_id,
@@ -109,7 +101,6 @@ async def add_user(session, tg_id, full_name, group=None, phone=None, language="
     return new_user
 
 
-# 🔄 Обновить прогресс
 async def update_progress(session, user_id, topic, correct, total):
     result = await session.execute(
         select(Progress).where(Progress.user_id == user_id, Progress.topic == topic)
@@ -131,14 +122,12 @@ async def update_progress(session, user_id, topic, correct, total):
     await session.commit()
 
 
-# 💭 Добавить отзыв
 async def add_feedback(session, user_id, message):
     feedback = Feedback(user_id=user_id, message=message)
     session.add(feedback)
     await session.commit()
 
 
-# 📚 Добавить урок в историю
 async def log_lesson(session, user_id, level, topic_title, score=0):
     history = LessonHistory(
         user_id=user_id,
