@@ -4,22 +4,17 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 from sqlalchemy import select
 from database import async_session, Student
+from lessons_topics import TOPICS
 import json, os, random
 
 router = Router()
 
 
-# ============================
-#  FSM Состояния
-# ============================
 class LessonMode(StatesGroup):
     choosing_mode = State()
     waiting_answer = State()
 
 
-# ============================
-#  Переводы интерфейса
-# ============================
 def tr(lang, key):
     data = {
         "ru": {
@@ -62,15 +57,10 @@ def tr(lang, key):
     return data.get(lang or "ru", data["ru"]).get(key, key)
 
 
-# ============================
-#  /lesson
-# ============================
 @router.message(Command("lesson"))
 async def start_lesson(message: types.Message, state: FSMContext):
     async with async_session() as session:
-        res = await session.execute(
-            select(Student).where(Student.tg_id == message.from_user.id)
-        )
+        res = await session.execute(select(Student).where(Student.tg_id == message.from_user.id))
         student = res.scalar()
 
     if not student:
@@ -82,7 +72,6 @@ async def start_lesson(message: types.Message, state: FSMContext):
         return
 
     lang = student.language or "ru"
-
     kb = types.InlineKeyboardMarkup(
         inline_keyboard=[
             [types.InlineKeyboardButton(text=tr(lang, "learn_topic"), callback_data="mode_topic")],
@@ -94,39 +83,29 @@ async def start_lesson(message: types.Message, state: FSMContext):
     await state.set_state(LessonMode.choosing_mode)
 
 
-# ============================
-#  Выбор режима
-# ============================
 @router.callback_query(LessonMode.choosing_mode)
 async def choose_mode(callback: types.CallbackQuery, state: FSMContext):
     mode = callback.data.split("_")[1]
 
     async with async_session() as session:
-        res = await session.execute(
-            select(Student).where(Student.tg_id == callback.from_user.id)
-        )
+        res = await session.execute(select(Student).where(Student.tg_id == callback.from_user.id))
         student = res.scalar()
 
     lang = student.language or "ru"
     level = student.level or "beginner"
 
-    # === Учить тему ===
     if mode == "topic":
-        topic_path = os.path.join("topics", f"{level}_{lang}.txt")
-        if not os.path.exists(topic_path):
+        topic_data = TOPICS.get(level, {}).get(lang)
+        if not topic_data:
             await callback.message.answer(tr(lang, "no_tasks"))
             await state.clear()
             return
 
-        with open(topic_path, "r", encoding="utf-8") as f:
-            text = f.read()
-
-        await callback.message.answer(f"📖 {text}")
+        await callback.message.answer(f"📖 {topic_data}")
         await callback.message.answer(tr(lang, "topic_end"))
         await state.clear()
         return
 
-    # === Пройти тест ===
     elif mode == "test":
         json_path = os.path.join("prompts", f"{level}.json")
         if not os.path.exists(json_path):
@@ -134,7 +113,6 @@ async def choose_mode(callback: types.CallbackQuery, state: FSMContext):
             await state.clear()
             return
 
-        # Загружаем JSON
         with open(json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
@@ -150,7 +128,6 @@ async def choose_mode(callback: types.CallbackQuery, state: FSMContext):
             await state.clear()
             return
 
-        # Выбор вопроса
         task = random.choice(questions)
         opts = task["options"]
         correct = str(task["answer"])
@@ -167,9 +144,6 @@ async def choose_mode(callback: types.CallbackQuery, state: FSMContext):
         await state.set_state(LessonMode.waiting_answer)
 
 
-# ============================
-#  Проверка ответа
-# ============================
 @router.callback_query(LessonMode.waiting_answer)
 async def check_answer(callback: types.CallbackQuery, state: FSMContext):
     data = await state.get_data()
@@ -179,9 +153,7 @@ async def check_answer(callback: types.CallbackQuery, state: FSMContext):
 
     if chosen == correct:
         async with async_session() as session:
-            res = await session.execute(
-                select(Student).where(Student.tg_id == callback.from_user.id)
-            )
+            res = await session.execute(select(Student).where(Student.tg_id == callback.from_user.id))
             student = res.scalar()
             if student:
                 student.score += 1
